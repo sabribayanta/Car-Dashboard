@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Registry — May 2026 New Vehicle Registrations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="h-left">
+      <div class="eyebrow">Monthly Registration Ledger</div>
+      <h1>Vehicle <span>Registry</span></h1>
+    </div>
+    <div class="h-right">
+      <div class="plate-chip">MAY · 2026</div>
+      <div style="margin-top:8px;">4,497 make/model/colour rows</div>
+    </div>
+  </header>
+
+  <div class="summary" id="summary"></div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <div class="chart-title">Top 5 makes</div>
+      <div class="bar-chart" id="makeChart"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Top 5 colours</div>
+      <div class="bar-chart" id="colorChart"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="search-row">
+      <input type="text" id="searchInput" placeholder="SEARCH MAKE OR MODEL — e.g. TOYOTA, TESLA, BYD..." autocomplete="off">
+      <select id="sortSelect">
+        <option value="total-desc">Most registered</option>
+        <option value="total-asc">Fewest registered</option>
+        <option value="make-asc">Make A–Z</option>
+      </select>
+    </div>
+    <div class="filter-block">
+      <div class="filter-label">Make</div>
+      <input type="text" id="makeFilterInput" class="mini-search" placeholder="Filter makes...">
+      <div class="chip-row chip-row-scroll" id="makeChips"></div>
+    </div>
+    <div class="filter-block">
+      <div class="filter-label">Colour</div>
+      <div class="chip-row" id="colorChips"></div>
+    </div>
+    <div class="filter-block">
+      <div class="filter-label">Model year</div>
+      <div class="chip-row" id="yearChips"></div>
+    </div>
+  </div>
+
+  <div class="results-head">
+    <span id="resultCount">— rows</span>
+    <button id="clearBtn">Clear filters</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="emptyState" style="display:none;">No vehicles match those filters. Try widening your search.</div>
+
+  <div class="footer-note">Source: monthly new vehicle registration data, May 2026 · Colour and model codes as issued in the original registry file</div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
